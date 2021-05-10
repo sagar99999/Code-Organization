@@ -1,0 +1,116 @@
+.section-about {
+    background: $color-white;
+    padding: 20rem 0 10rem 0;
+    margin-top: -10vh;
+}
+.section-features {
+    padding: 14rem 0;
+    background-image:linear-gradient(to left top, rgba(20, 218, 20, .4), rgba(22, 34, 29, 0.6)), url("../Img/bali-island-indonesia.jpg");
+    background-size: cover;
+    background-position: center;
+    transform: skewY(-4deg);
+
+    & > * {
+        transform: skewY(4deg);
+    }
+}
+
+.section-tours {
+    padding: 10rem 0;
+}
+.section-stories {
+    overflow: hidden;
+    position: relative;
+
+    .heading-secondary {
+        position: absolute;
+        left: 50%;
+        top: -5rem;
+        transform: translateX(-50%);
+    }
+    
+}
+
+.book {
+    background:linear-gradient(110deg,rgba(255, 255, 255, 0.781) 50%, transparent 50%), url("../Img/hero.jpg") center;
+    background-size: cover;
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem $color-black;
+    padding: 3rem;
+
+    @include reponsive-bp(mobile) {
+        padding: 3rem;
+        background:linear-gradient(to bottom right,rgba(255, 255, 255, 0.781), $color-silver), url("../Img/hero.jpg") center;
+    }
+    
+    &__form > .heading-secondary {
+
+        @include reponsive-bp(mobile) {
+            width: 100%;
+            text-align: center;
+        }
+    }
+}
+
+.footer {
+    background: $color-black;
+    padding: 4rem 0;
+
+    &__logo {
+        font: 8rem linea-basic-10;
+        color: $color-white;
+        background: $color-black;
+    }
+
+    &__item{
+        display: inline-block;
+        
+        &:not(:last-child) {
+            margin-right: 2.5rem;
+        }
+    }
+
+    &__link  {
+        text-decoration: none;
+        list-style: none;
+        color: $color-white-3;
+        font-size: 1.5rem;
+        position: relative;
+
+        &:before {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            height: .2rem;
+            width: 0;
+            background: $color-white-3;
+            bottom: -.7rem;
+            opacity: 0;
+            transition: .2s all ease-in;
+        }
+
+        &:hover:before {
+            width: 100%;
+            opacity: 1;
+        } 
+    }
+
+    &__copyright {
+
+        margin-left: 6rem;
+
+        @include reponsive-bp(mobile) {
+            margin-left: 0;
+        }
+
+        &-text {
+            float: right;
+            font-size: 1.3rem;
+            color: $color-white-3;
+
+            @include reponsive-bp(mobile) {
+                float: none;
+            }
+        }
+    }
+}

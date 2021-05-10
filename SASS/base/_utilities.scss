@@ -1,0 +1,30 @@
+.u-text-center {
+    @include txt-center();
+}
+.u-margin-bottom-big {
+    margin-bottom: 7rem;
+}
+.u-margin-bottom-small {
+    margin-bottom: 2rem;
+}
+.u-margin-bottom-tiny {
+    margin-bottom: .3rem;
+}
+.u-margin-bottom-medium {
+    margin-bottom: 5rem;
+}
+.u-padding-tb {
+    padding: 1rem 0;
+}
+.u-padding-big {
+    padding: 4.6rem;
+}
+.u-padding-medium {
+    padding: 1.3rem;
+}
+.u-padding-small { 
+    padding: .9rem;
+}
+.u-icon-padding {
+    padding: 1rem;
+}

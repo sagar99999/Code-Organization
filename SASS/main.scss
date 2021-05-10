@@ -1,0 +1,70 @@
+//partial scss file imported from the abstracts folder
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "abstracts/functions";
+@import "abstracts/extends";
+
+//partial scss file imported from the base folder
+@import "base/animation";
+@import "base/base";
+@import "base/typography";
+
+//partial file imported from the layout folder
+@import "layouts/header";
+@import "layouts/section";
+
+//partial file imported from the pages folder
+@import "pages/home";
+
+//partial file imported from the components folder
+@import "components/buttons";
+@import "components/composition";
+@import "components/icons";
+@import "components/feature-box";
+@import "components/cards";
+@import "components/stories";
+@import "components/bg-video";
+@import "components/form";
+@import "components/navigation";
+@import "components/popup";
+
+@import "base/utilities";
+
+/*
+    Things to remember when using CSS animation is that, when using Keyframes css rule to animate
+    css property it is considered the browser are only optimzed for the two propperties to animate
+    they are:
+    1. opacity
+    2. transform:
+
+    When there are more than two declrations applied to the same element the conflict occurs, 
+    in that case, browser uses cascading tehnique to apply the correct css declartion to the element, 
+    the order is:
+    1. !important > 2. selector specificity > 3. format order
+    
+    rem unit is supported after internet explorer 9, they are super handy when you wanna create a modern
+    website layout. It allow you to write a global setting that is siffiecent to manipuate all the other element
+    font size in the website with just one setting, but it uses inheritance technique as property related to the 
+    font are easily inherited.
+
+    avoid using universal selector as much as possible, use inheritance technique whenever you can on the css
+    property, some css properties related to the font are inhertied easily where as some properties like
+    padding and margin are not inherited and if the cascaded value is not there then, css engine wil basically
+    apply the initial value provided in the css specs.
+    
+    CODE Management: (BEM) methoddology
+    use BEM technique to create a consistent structure or markup of your website for naming classes,
+    This method helps to keep the specificity of the element low when styling.
+    BEM sticks for three golden rule they are:
+    1. B - Block element that have meaning on its own like header, main, footer, etc
+    2. E - Element that resides inside the B (block element) because they have no meaning on its own like : another div child inside the B element, etc
+    3. M - Element modifier is a class that changes the styles of the E element and reside with them
+    
+    Each of these element in the BEM are denoted by using class using the following notion respectively:
+    1. B - class="block-element"
+    2. E - class="block-element__main-container"
+    3. M - class="btn--white btn--black"
+
+
+
+*/

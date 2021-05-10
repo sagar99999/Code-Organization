@@ -1,0 +1,33 @@
+.header {
+    padding: 2rem;
+    height: 95vh;
+    background-image:linear-gradient(to left top, rgba(20, 218, 20, .4), rgba(22, 34, 29, 0.6)), url("../Img/hero.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+
+    @media (min-resolution: 150dpi) and (min-width: 900px),
+    (min-width: 1800px) {
+        background-image:linear-gradient(to left top, rgba(236, 41, 148, 0.4), rgba(22, 34, 29, 0.6)), url("../Img/hero.jpg");
+    }
+
+    &__logo-box {
+        position: absolute;
+    }
+
+    &__logo {
+        width: 6.5rem;
+        height: auto;
+    }
+
+    &__heading-container {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+        @include txt-center();
+    }
+}

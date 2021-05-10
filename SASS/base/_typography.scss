@@ -1,0 +1,84 @@
+.heading-primary {
+    color: $color-white;
+    backface-visibility: hidden;
+    @include txt-center();
+
+    &--main {
+        display: block;
+        font: italic 8rem $font-secondary;
+        letter-spacing: .5rem;
+        @include animation-tmplt(moveInLeft, 800ms, linear);
+        
+        @include reponsive-bp(tab-port) {
+            line-height: 1;
+        }
+        @include reponsive-bp(mobile) {
+            font-size: 6rem;
+            letter-spacing: .2rem;
+        }
+
+    }
+    
+    &--sub {
+    display: block;
+    font-size: 3rem;
+    letter-spacing: -.1rem;
+    font-weight: normal;
+    @include animation-tmplt(moveInRight, 800ms, linear);
+    
+    @include reponsive-bp(tab-land) {
+        line-height: 1;
+        font-size: 2.6rem;
+    }
+    @include reponsive-bp(tab-port) {
+        line-height: 1.2;
+        font-size: 2.8rem;
+    }
+    @include reponsive-bp(mobile) {
+        font-size: 3rem;
+        line-height: 1.1;
+    }
+    
+
+    }
+}
+
+.heading-secondary {
+    word-spacing: -4px;
+    display: inline-block;
+    font: 800 3.8rem $font-primary;
+    color: lighten($color-black, 10);
+    transition: transform 150ms linear;
+    @extend %cursor-pointer;
+    
+    @supports (background-clip: text) and (display: grid) {
+        background: linear-gradient(to right, rgb(62, 20, 212), rgb(14, 155, 21));
+        background-clip: text;
+        color: transparent;
+    }
+
+    &:hover {
+        transform: skew(-13deg, -2deg) scale(1.13);
+        text-shadow: 3px 4px 5px rgba($color-black, .3);
+    }
+
+    @include reponsive-bp(tab-land) {
+        font-size: 3.3rem;
+    }
+    @include reponsive-bp(tab-port) {
+        font-size: 3.2rem;
+    }
+    @include reponsive-bp(mobile) {
+        font-size: 3rem;
+    }
+    
+}
+.heading-tertiary {
+    font-size: 2.3rem;
+    line-height: 1;
+    font-weight: 800;
+    color: $color-black;
+}
+.paragraph {
+    font-size: 1.5rem;
+}

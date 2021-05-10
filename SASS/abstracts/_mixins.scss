@@ -1,0 +1,54 @@
+//mixin properties
+@mixin classyfont($colr) {
+    font: small-caps oblique bold 2rem arial;
+    color: $colr;
+}
+@mixin txt-center {
+    text-align: center;
+}
+@mixin animation-tmplt($an, $ad, $atf) {
+    animation-name: $an;
+    animation-duration: $ad; 
+    animation-timing-function: $atf;
+}
+@mixin clear-fix {
+    content: "";
+    display: block;
+    clear: both;
+}
+@mixin grid-gutter-horizontal {
+    &:not(:last-child) {
+        margin-right: $gutter-horizontal;
+    }
+}
+
+/*
+  Responsive website breakpoint for ya!
+*/
+
+@mixin reponsive-bp($device) {
+
+    @if $device == mobile {
+        @media (max-width: 37.5em) { // Here we use em units instead of rem because media query breakpoints does not work well with rem, therefore we use em by deviding with the default font size of the most browser which is 16px
+            @content;
+        }
+    }
+
+    @if $device == tab-port {
+        @media (max-width: 56.25em) {
+            @content;
+        }
+    }
+
+    @if $device == tab-land {
+        @media (max-width: 75em) {
+            @content;
+        }
+    }
+
+    @if $device == xl-device {
+        @media (min-width: 112.5em) {
+            @content;
+        }
+    }
+}

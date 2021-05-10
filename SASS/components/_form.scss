@@ -1,0 +1,119 @@
+.form {
+
+    @include reponsive-bp(mobile) {
+        text-align: center;
+    }
+    &__input {
+       display: block;
+       width: 40%;
+       font-family: arial;
+       font-size: 1.8rem;
+       padding: 1.2rem;
+       background: $color-white;
+       border: none;
+       border-radius: .5rem;
+       color: $color-black;
+       outline: none;
+       box-shadow: none;
+       transition: border .08s ease-out;
+       position: relative;
+
+       @include reponsive-bp(mobile) {
+           width: 100%;
+       }
+
+       &:focus:invalid {
+        border-bottom: medium solid red;
+       }
+       &:focus:valid {
+           border-bottom: medium solid $color-green;
+       }
+       &:valid {
+        transform: translate(0,0);
+       }
+
+       &::placeholder {
+           color: transparent;
+       }
+
+       &:not(:placeholder-shown) + label{
+        transform: translate(0,0);
+       }
+       
+    }
+
+    &__label {
+        font-size: 1.4rem;
+        color: $color-black;
+
+        &--animate {
+            transition: all .3s linear;
+            display: inline-block;
+            transform: translate(1.5rem,-3.7rem);
+        }
+
+        &--gender {
+            font: bold 2rem arial;
+            color: $color-black;
+            position: relative;
+            margin:0 .8rem;
+            cursor: pointer;
+            
+            &__icon {
+                display: inline-block;
+                border: thick solid $color-green;
+                height: 2rem;
+                width: 2rem;
+                border-radius: 50%;
+                position: absolute;
+                left: -2.4rem;
+
+                &::before {
+                    content: "";
+                    display: inline-block;
+                    height: .8rem;
+                    width: .8rem;
+                    background: $color-green;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    opacity: 0;
+                    transition: .5s opacity;
+                }
+            }
+        }
+    }
+
+    &__group {
+        margin: 2rem 0;
+    }
+}
+
+input[type="submit"] {
+    color: $color-white;
+    font: bold 2rem arial;
+    padding: 1rem 2rem;
+    border: none;
+    outline: none;
+    background: $color-green;
+    border-radius: .3rem;
+    cursor: pointer;
+    transition: .3s all;
+
+    &:hover {
+        transform: translateY(-.2rem);
+        background: lighten($color-green, 5%);
+        box-shadow: 0 0 .5rem grey;
+    }
+}
+
+input[type="radio"] {
+    visibility: hidden;
+
+    &:checked + label span:before {
+        opacity: 1;
+    }
+
+}

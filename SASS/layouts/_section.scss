@@ -1,0 +1,70 @@
+.row {
+    margin: 0 auto;
+    max-width: $grid-width;
+
+    &:after {
+        @include clear-fix();
+    }
+    
+    @include reponsive-bp(tab-land) {
+        max-width: 110rem;
+    }
+    @include reponsive-bp(tab-port) {
+        max-width: 70rem;
+    }
+    @include reponsive-bp(mobile) {
+        max-width: 40rem;
+    }
+    @include reponsive-bp(xl-device) {
+        max-width: 190rem;
+    }
+
+}
+
+
+
+.col-1-of-2 {
+    width: calc((100% - #{$gutter-horizontal}) / 2);
+}
+
+.col-1-of-4 {
+    width: calc((100% - #{$gutter-horizontal} * 3) / 4);
+}
+.col-1-of-3 {
+    width: calc((100% - #{$gutter-horizontal} * 2) / 3);
+}
+
+
+[class^="col"] {
+    float: left;
+
+    &:not(:last-child) {
+        margin-right: $gutter-horizontal;
+    }
+
+    @include reponsive-bp(mobile) {
+        float: none;
+        width: 70%;
+        margin: 0 auto;
+        
+        &:not(:last-child) {
+            margin-bottom: 4rem;
+        }
+    }
+} 
+//SASS rewrite
+//Why to use sass
+/*
+The answer is fairly is simple, SASS is preprocessor aka extension that adds more power and elegancy in writing CSS
+Generally SASS is used in order to increase workflow of writing in the traditional CSS
+with the more features like:
+1. Variable
+2. nesting
+3. mixin
+4. extend
+5. control directive
+6. function
+7. operator
+8. parial and imports
+
+*/
